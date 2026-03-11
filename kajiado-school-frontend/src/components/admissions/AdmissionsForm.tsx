@@ -75,7 +75,7 @@ export default function AdmissionsForm() {
       </h1>
 
       <p className="text-center opacity-80 mb-8">
-        Join Karura Adventist School. Complete the form below to apply.
+        Join Kajiado Adventist School and Rescue Center. Complete the form below to apply.
       </p>
 
       <form

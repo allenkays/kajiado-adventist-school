@@ -77,7 +77,7 @@ export default function ContactPage() {
         <div>
           <h2 className="text-2xl font-semibold mb-4">Our Contact Information</h2>
           <p className="text-gray-700 mb-2">
-            <span className="font-semibold">Address:</span> Karura SDA Church School,<br/> Red Hill Road,<br/> P.O. Box 63445-00619 Muthaiga,<br/> Nairobi, Kenya
+            <span className="font-semibold">Address:</span> Kajiado SDA Church School,<br/> Red Hill Road,<br/> P.O. Box 63445-00619 Muthaiga,<br/> Nairobi, Kenya
           </p>
           <p className="text-gray-700 mb-2">
             <span className="font-semibold">Principal’s Office:</span> 020 2067850
@@ -89,14 +89,14 @@ export default function ContactPage() {
             <span className="font-semibold">Primary Division:</span> +254 703 568 897
           </p>
           <p className="text-gray-700 mb-2">
-            <span className="font-semibold">Email:</span> info@karuraschool.ac.ke
+            <span className="font-semibold">Email:</span> info@kajiadoschool.ac.ke
           </p>
         </div>
 
         {/* Google Map */}
         <div className="h-64 w-full">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.123456!2d36.8219!3d-1.2921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10a1b2c3d4e5%3A0x1234567890abcdef!2sKarura%20Adventist%20School!5e0!3m2!1sen!2ske!4v1700000000000!5m2!1sen!2ske"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.123456!2d36.8219!3d-1.2921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10a1b2c3d4e5%3A0x1234567890abcdef!2sKajiado%20Adventist%20School!5e0!3m2!1sen!2ske!4v1700000000000!5m2!1sen!2ske"
             className="w-full h-full rounded"
             allowFullScreen
             loading="lazy"

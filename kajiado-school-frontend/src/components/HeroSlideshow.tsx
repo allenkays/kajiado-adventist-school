@@ -7,22 +7,22 @@ import { useEffect, useState } from "react";
 
 const slides = [
   {
-    src: "/images/karura_pics/karura01.jpg",
-    title: "Karura SDA Church School",
+    src: "/images/kajiado_pics/kajiado_pic3.jpg",
+    title: "Kajiado Adventist School & Rescue Center",
     subtitle: "Education for Eternity",
   },
   {
-    src: "/images/karura_pics/karura02.jpg",
+    src: "/images/kajiado_pics/kajiado_pic4.jpg",
     title: "Nurturing Mind & Character",
-    subtitle: "Academic Excellence with Christian Values",
+    subtitle: "Empowering Minds, Embracing Faith",
   },
   {
-    src: "/images/karura_pics/karura03.jpg",
+    src: "/images/kajiado_pics/kajiado_pic6.jpg",
     title: "A Safe Learning Environment",
     subtitle: "Where Every Child Matters",
   },
   {
-    src: "/images/karura_pics/karura04.jpg",
+    src: "/images/kajiado_pics/kajiado_pic21.jpg",
     title: "Preparing Students for Life",
     subtitle: "Faith • Knowledge • Service",
   },
@@ -69,7 +69,7 @@ export default function HeroSlideshow() {
       ))}
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40 z-20" />
+      {/* <div className="absolute inset-0 bg-black/40 z-20" /> */}
 
       {/* Text Content */}
       <div className="absolute inset-0 z-30 flex flex-col items-center justify-center text-center px-4 text-white">
@@ -87,22 +87,8 @@ export default function HeroSlideshow() {
           {slides[current].subtitle}
         </p>
 
-        {/* Action Buttons */}
+        {/*Action Buttons */}
         <div className="flex flex-col md:flex-row gap-4 items-center">
-          <Link
-            href="/admissions"
-            className="bg-darkBrown border border-brown px-6 py-3 rounded-lg font-semibold hover:bg-brown transition"
-          >
-            Admissions
-          </Link>
-
-          <Link
-            href="/contact"
-            className="bg-darkBrown border border-brown px-6 py-3 rounded-lg font-semibold hover:bg-brown transition"
-          >
-            Contact Us
-          </Link>
-
           {/* Portals Dropdown */}
           <div className="relative">
             <button
@@ -145,6 +131,19 @@ export default function HeroSlideshow() {
               </div>
             )}
           </div>
+          <Link
+            href="/admissions"
+            className="bg-darkBrown border border-brown px-6 py-3 rounded-lg font-semibold hover:bg-brown transition"
+          >
+            Admissions
+          </Link>
+
+          <Link
+            href="/contact"
+            className="bg-darkBrown border border-brown px-6 py-3 rounded-lg font-semibold hover:bg-brown transition"
+          >
+            Contact Us
+          </Link>
         </div>
       {/* Arrows */}
       <button

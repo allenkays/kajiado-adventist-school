@@ -14,7 +14,7 @@ export default function Navbar() {
           href="/"
           className="text-2xl font-bold text-cream tracking-wide"
         >
-          Karura Adventist School
+          KASRC
         </Link>
 
         {/* Desktop Menu */}

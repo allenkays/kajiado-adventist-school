@@ -8,7 +8,7 @@ export default function Footer() {
         {/* School Info */}
         <div>
           <h3 className="text-xl font-bold mb-3">
-            Karura Adventist School
+            Kajiado Adventist School and Rescue Center
           </h3>
           <p className="text-sm leading-relaxed">
             Education for Eternity.<br />
@@ -46,7 +46,7 @@ export default function Footer() {
           <ul className="space-y-2 text-sm">
             <li>Nairobi, Kenya</li>
             <li>📞 +254 7XX XXX XXX</li>
-            <li>✉️ info@karuraadventistschool.ac.ke</li>
+            <li>✉️ info@kajiadoadventistschool.ac.ke</li>
           </ul>
         </div>
 
@@ -54,7 +54,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="bg-darkBrown text-center py-3 text-sm">
-        © {new Date().getFullYear()} Karura Adventist School. All rights reserved.
+        © {new Date().getFullYear()} Kajiado Adventist School and Rescue Center. All rights reserved.
       </div>
     </footer>
   );

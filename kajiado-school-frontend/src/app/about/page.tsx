@@ -26,7 +26,7 @@ export default function AboutPage() {
     {
       name: "Mary Kamau",
       relation: "Parent",
-      text: "Karura Adventist School has transformed my child’s learning experience!",
+      text: "Kajiado Adventist School and Rescue Center has transformed my child’s learning experience!",
     },
     {
       name: "Samuel Kiptoo",
@@ -36,7 +36,7 @@ export default function AboutPage() {
     {
       name: "Maria Mutheu",
       relation: "Parent",
-      text: "Karura Adventist School has transformed my child’s learning experience!",
+      text: "Kajiado Adventist School and Rescue Center has transformed my child’s learning experience!",
     },
     {
       name: "Sammy Kuria",
@@ -51,10 +51,8 @@ export default function AboutPage() {
       <div>
         <h1 className="text-3xl font-bold mb-4">Our History</h1>
         <p className="text-gray-700">
-          Karura Adventist School was established to provide quality Christian
-          education to children in Nairobi. Over the years, it has grown into a
-          nurturing and academically excellent institution, preparing students
-          for both life and eternity.
+          Founded in the year 2000, Kajiado Adventist School has grown from a small community school to a beacon of hope,
+          serving hundreds of students with a commitment to academic and moral development.
         </p>
       </div>
 

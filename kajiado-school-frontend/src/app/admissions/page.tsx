@@ -10,7 +10,7 @@ export default function AdmissionsPage() {
       <section className="text-center max-w-3xl mx-auto">
         <h1 className="text-4xl font-bold mb-4">Admissions</h1>
         <p className="text-lg">
-          Karura Adventist School welcomes learners into a Christ-centered,
+          Kajiado Adventist School and Rescue Center welcomes learners into a Christ-centered,
           disciplined, and nurturing learning environment.
         </p>
       </section>
@@ -95,7 +95,7 @@ export default function AdmissionsPage() {
         <p className="font-medium">
           📞 Phone: +254 XXX XXX XXX  
           <br />
-          📧 Email: info@karuraschool.ac.ke
+          📧 Email: info@kajiadoschool.ac.ke
         </p>
       </section>
 

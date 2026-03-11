@@ -9,22 +9,9 @@ export default function Hero() {
 
   return (
     <section className="relative w-full h-[500px] md:h-[700px] overflow-hidden">
-      {/* Slideshow */}
-      <HeroSlideshow/>
-
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/40 z-10" />
-
-      {/* Content */}
-      <div className="absolute inset-0 z-20 flex flex-col justify-center items-center px-4 text-center text-white">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
-          Karura Adventist School
-        </h1>
-
-        <p className="text-lg md:text-2xl bg-lightBrown text-cream px-6 py-3 rounded mb-8 drop-shadow">
-          Education for Eternity
-        </p>
-
+      <div>
+        {/* Slideshow */}
+        <HeroSlideshow/>
         {/* Action Buttons */}
         <div className="flex flex-col md:flex-row gap-4 items-center">
           <Link

@@ -19,7 +19,7 @@ export default function CurriculumPage() {
           Our Curriculum
         </h1>
         <p className="text-lg">
-          Karura Adventist School follows the Competency-Based Curriculum (CBC)
+          Kajiado Adventist School and Rescue Center follows the Competency-Based Curriculum (CBC)
           as approved by the Kenya Institute of Curriculum Development (KICD).
         </p>
       </header>
