@@ -1,0 +1,45 @@
+name: Frontend CI
+
+on:
+  push:
+    paths:
+      - "kajiado-school-frontend/**"
+      - ".github/workflows/frontend.yml"
+  pull_request:
+    paths:
+      - "kajiado-school-frontend/**"
+
+jobs:
+  frontend-checks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: kajiado-school-frontend/package-lock.json
+
+      - name: Install dependencies
+        run: |
+          cd ${{ github.workspace }}/kajiado-school-frontend
+          npm ci
+
+      - name: Lint
+        run: |
+          cd ${{ github.workspace }}/kajiado-school-frontend
+          npm run lint
+
+      - name: Typecheck
+        run: |
+          cd ${{ github.workspace }}/kajiado-school-frontend
+          npm run typecheck
+
+      - name: Build
+        run: |
+          cd ${{ github.workspace }}/kajiado-school-frontend
+          npm run build

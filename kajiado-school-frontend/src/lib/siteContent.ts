@@ -1,0 +1,343 @@
+export type LinkItem = { label: string; href: string };
+
+export type SiteContent = {
+  navbar: {
+    logoText: string;
+    links: LinkItem[];
+  };
+  footer: {
+    schoolName: string;
+    tagline: string;
+    description: string;
+    quickLinksTitle: string;
+    quickLinks: LinkItem[];
+    sectionsTitle: string;
+    sections: string[];
+    contactTitle: string;
+    contactLines: string[];
+    copyrightSuffix: string;
+  };
+  home: {
+    slides: Array<{ src: string; title: string; subtitle: string }>;
+    portalButtonText: string;
+    portalLinks: LinkItem[];
+    admissionsButtonText: string;
+    contactButtonText: string;
+  };
+  about: {
+    historyTitle: string;
+    historyText: string;
+    missionVisionTitle: string;
+    missionTitle: string;
+    missionText: string;
+    visionTitle: string;
+    visionText: string;
+    leadershipTitle: string;
+    leadership: Array<{ name: string; role: string; img: string }>;
+    testimonialsTitle: string;
+    testimonials: Array<{ name: string; relation: string; text: string }>;
+  };
+  admissions: {
+    pageTitle: string;
+    intro: string;
+    sectionsTitle: string;
+    sections: Array<{ title: string; description: string }>;
+    howToApplyTitle: string;
+    processTitle: string;
+    processSteps: string[];
+    requiredDocsTitle: string;
+    requiredDocs: Array<{ label: string; href: string }>;
+    helpTitle: string;
+    helpText: string;
+    helpPhone: string;
+    helpEmail: string;
+  };
+  contact: {
+    pageTitle: string;
+    labels: { name: string; email: string; message: string; submit: string };
+    successMessage: string;
+    contactInfoTitle: string;
+    addressLabel: string;
+    addressLines: string[];
+    officeLabel: string;
+    officePhone: string;
+    secondaryLabel: string;
+    secondaryPhone: string;
+    primaryLabel: string;
+    primaryPhone: string;
+    emailLabel: string;
+    email: string;
+    mapEmbedUrl: string;
+  };
+  newsEvents: {
+    newsTitle: string;
+    newslettersTitle: string;
+    eventsTitle: string;
+    news: Array<{ title: string; date: string; content: string }>;
+    newsletters: Array<{ title: string; link: string }>;
+    events: Array<{ title: string; date: string; description: string }>;
+  };
+  parents: {
+    pageTitle: string;
+    intro: string;
+    ptaTitle: string;
+    ptaText: string;
+    ptaBullets: string[];
+    portalTitle: string;
+    portalText: string;
+    portalButton: string;
+    communicationTitle: string;
+    communicationItems: string[];
+    downloadsTitle: string;
+    downloadsItems: string[];
+    ptaLeadershipTitle: string;
+    ptaLeaders: string[];
+    faqsTitle: string;
+    faqs: Array<{ q: string; a: string }>;
+    pdfLinks: Array<{ label: string; href: string }>;
+    valuesTitle: string;
+    valuesText: string;
+  };
+  studentLife: {
+    activitiesTitle: string;
+    activities: Array<{ name: string; description: string }>;
+    councilTitle: string;
+    council: Array<{ name: string; position: string }>;
+    eventsTitle: string;
+    events: Array<{ date: string; title: string }>;
+  };
+  curriculum: {
+    pageTitle: string;
+    intro: string;
+    learningAreasTitle: string;
+    viewLearningAreasLabel: string;
+    sections: Record<string, { title: string; grades: string; description: string; areas: string[] }>;
+  };
+};
+
+export const defaultSiteContent: SiteContent = {
+  navbar: {
+    logoText: "KASRC",
+    links: [
+      { label: "Home", href: "/" },
+      { label: "About Us", href: "/about" },
+      { label: "Curriculum", href: "/curriculum" },
+      { label: "Admissions", href: "/admissions" },
+      { label: "Student Life", href: "/student-life" },
+      { label: "Parents", href: "/parents" },
+      { label: "News & Events", href: "/news-events" },
+      { label: "Contact", href: "/contact" }
+    ]
+  },
+  footer: {
+    schoolName: "Kajiado Adventist School and Rescue Center",
+    tagline: "Education for Eternity.",
+    description: "A Seventh-day Adventist institution offering holistic, competency-based education.",
+    quickLinksTitle: "Quick Links",
+    quickLinks: [
+      { label: "About Us", href: "/about" },
+      { label: "Admissions", href: "/admissions" },
+      { label: "Curriculum", href: "/curriculum" },
+      { label: "Student Life", href: "/student-life" },
+      { label: "Parents", href: "/parents" }
+    ],
+    sectionsTitle: "School Sections",
+    sections: [
+      "Play Group (PP1 & PP2)",
+      "Primary School (Grade 1–6)",
+      "Junior School (Grade 7–9)",
+      "Senior School (Grade 10–12)"
+    ],
+    contactTitle: "Contact Us",
+    contactLines: ["Nairobi, Kenya", "📞 +254 7XX XXX XXX", "✉️ info@kajiadoadventistschool.ac.ke"],
+    copyrightSuffix: "Kajiado Adventist School and Rescue Center. All rights reserved."
+  },
+  home: {
+    slides: [
+      { src: "/images/kajiado_pics/kajiado_pic3.jpg", title: "Kajiado Adventist School & Rescue Center", subtitle: "Education for Eternity" },
+      { src: "/images/kajiado_pics/kajiado_pic4.jpg", title: "Nurturing Mind & Character", subtitle: "Empowering Minds, Embracing Faith" },
+      { src: "/images/kajiado_pics/kajiado_pic6.jpg", title: "A Safe Learning Environment", subtitle: "Where Every Child Matters" },
+      { src: "/images/kajiado_pics/kajiado_pic21.jpg", title: "Preparing Students for Life", subtitle: "Faith • Knowledge • Service" }
+    ],
+    portalButtonText: "Portals",
+    portalLinks: [
+      { label: "Student Portal", href: "/portal/student" },
+      { label: "Parent Portal", href: "/portal/parent" },
+      { label: "Staff Portal", href: "/portal/staff" },
+      { label: "Finance Portal", href: "/portal/finance" }
+    ],
+    admissionsButtonText: "Admissions",
+    contactButtonText: "Contact Us"
+  },
+  about: {
+    historyTitle: "Our History",
+    historyText: "Founded in the year 2000, Kajiado Adventist School has grown from a small community school to a beacon of hope, serving hundreds of students with a commitment to academic and moral development.",
+    missionVisionTitle: "Mission & Vision",
+    missionTitle: "Mission",
+    missionText: "To provide holistic education rooted in Christian values, fostering academic excellence, character development, and social responsibility.",
+    visionTitle: "Vision",
+    visionText: "A center of excellence recognized for nurturing morally upright, competent, and innovative learners ready to impact society positively.",
+    leadershipTitle: "Our Leadership",
+    leadership: [
+      { name: "Mrs. Jane Njeri", role: "Principal", img: "/images/principal.jpg" },
+      { name: "Mr. Peter Ouma", role: "Head of Primary", img: "/images/head_primary.jpg" },
+      { name: "Ms. Grace Wambui", role: "Head of Junior", img: "/images/head_junior.jpg" },
+      { name: "Mr. John Mwangi", role: "Head of Senior", img: "/images/head_senior.jpg" }
+    ],
+    testimonialsTitle: "What Parents & Students Say",
+    testimonials: [
+      { name: "Mary Kamau", relation: "Parent", text: "Kajiado Adventist School and Rescue Center has transformed my child’s learning experience!" },
+      { name: "Samuel Kiptoo", relation: "Student", text: "I enjoy the learning environment and all the extracurricular activities offered here." },
+      { name: "Maria Mutheu", relation: "Parent", text: "Kajiado Adventist School and Rescue Center has transformed my child’s learning experience!" },
+      { name: "Sammy Kuria", relation: "Student", text: "I enjoy the learning environment and all the extracurricular activities offered here." }
+    ]
+  },
+  admissions: {
+    pageTitle: "Admissions",
+    intro: "Kajiado Adventist School and Rescue Center welcomes learners into a Christ-centered, disciplined, and nurturing learning environment.",
+    sectionsTitle: "Available School Sections",
+    sections: [
+      { title: "Pre-Primary", description: "Play Group, PP1 & PP2" },
+      { title: "Primary School", description: "Grades 1 – 6 (CBC)" },
+      { title: "Junior High School", description: "Grades 7 – 9" },
+      { title: "Senior High School", description: "Grades 10 – 12 (Upcoming)" }
+    ],
+    howToApplyTitle: "How to Apply",
+    processTitle: "Admission Process",
+    processSteps: [
+      "Fill in the online admission form",
+      "Attach required documents",
+      "Assessment / interview where applicable",
+      "Admission confirmation and fee payment"
+    ],
+    requiredDocsTitle: "Required Documents",
+    requiredDocs: [
+      { label: "Admission Form", href: "/docs/admission-form.pdf" },
+      { label: "Fee Structure", href: "/docs/fee-structure.pdf" },
+      { label: "School Calendar", href: "/docs/school-calendar.pdf" }
+    ],
+    helpTitle: "Need Help?",
+    helpText: "Contact the school office for guidance on admissions and enrollment.",
+    helpPhone: "+254 XXX XXX XXX",
+    helpEmail: "info@kajiadoschool.ac.ke"
+  },
+  contact: {
+    pageTitle: "Contact Us",
+    labels: { name: "Name", email: "Email", message: "Message", submit: "Send Message" },
+    successMessage: "Message sent! (frontend only)",
+    contactInfoTitle: "Our Contact Information",
+    addressLabel: "Address",
+    addressLines: ["Kajiado SDA Church School", "Red Hill Road", "P.O. Box 63445-00619 Muthaiga", "Nairobi, Kenya"],
+    officeLabel: "Principal’s Office",
+    officePhone: "020 2067850",
+    secondaryLabel: "Secondary Division",
+    secondaryPhone: "+254 729 852 044",
+    primaryLabel: "Primary Division",
+    primaryPhone: "+254 703 568 897",
+    emailLabel: "Email",
+    email: "info@kajiadoschool.ac.ke",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.123456!2d36.8219!3d-1.2921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10a1b2c3d4e5%3A0x1234567890abcdef!2sKajiado%20Adventist%20School!5e0!3m2!1sen!2ske!4v1700000000000!5m2!1sen!2ske"
+  },
+  newsEvents: {
+    newsTitle: "School News",
+    newslettersTitle: "Newsletter Archives",
+    eventsTitle: "Upcoming Events",
+    news: [
+      { title: "Science Fair Winners Announced", date: "2025-03-12", content: "Congratulations to all participants in the 2025 Science Fair. Our students showcased amazing STEM projects." },
+      { title: "New Computer Lab Inauguration", date: "2025-02-25", content: "The school inaugurated a state-of-the-art computer lab to enhance digital literacy for all students." }
+    ],
+    newsletters: [
+      { title: "January 2025 Newsletter", link: "/docs/newsletters/jan-2025.pdf" },
+      { title: "February 2025 Newsletter", link: "/docs/newsletters/feb-2025.pdf" }
+    ],
+    events: [
+      { title: "Annual Sports Day", date: "2025-01-20", description: "Join us for an exciting day of sports and competitions." },
+      { title: "Parent-Teacher Meeting", date: "2025-04-05", description: "Meet teachers and discuss student progress and school initiatives." }
+    ]
+  },
+  parents: {
+    pageTitle: "Parents & Guardians",
+    intro: "We believe in a strong partnership between the school and parents to nurture learners academically, morally, and spiritually.",
+    ptaTitle: "Parent–Teacher Association (PTA)",
+    ptaText: "The PTA supports school programs, promotes parent engagement, and contributes to the holistic development of learners.",
+    ptaBullets: ["Termly PTA meetings", "School development projects", "Parent representation"],
+    portalTitle: "Parent Portal",
+    portalText: "Access academic reports, attendance records, fee statements, and official school communication.",
+    portalButton: "Parent Portal Login",
+    communicationTitle: "Communication Channels",
+    communicationItems: ["Official school emails", "SMS & WhatsApp announcements", "Parent–Teacher meetings", "Student diaries"],
+    downloadsTitle: "Important Downloads",
+    downloadsItems: ["School Calendar", "Fee Structure", "School Rules & Regulations", "Uniform Guidelines"],
+    ptaLeadershipTitle: "PTA Leadership",
+    ptaLeaders: ["PTA Chairperson", "PTA Vice Chair", "PTA Secretary"],
+    faqsTitle: "Parent FAQs",
+    faqs: [
+      { q: "How do parents communicate with teachers?", a: "Parents can communicate through official school emails, scheduled meetings, and student diaries." },
+      { q: "How are school fees paid?", a: "Fees are paid via approved bank accounts. Full details are available in the fee structure document." },
+      { q: "Does the school observe the Sabbath?", a: "Yes. As a Seventh-day Adventist institution, the school observes the Sabbath from Friday sunset to Saturday sunset." }
+    ],
+    pdfLinks: [
+      { label: "Student Handbook", href: "/docs/student-handbook.pdf" },
+      { label: "Academic Calendar", href: "/docs/academic-calendar.pdf" },
+      { label: "Uniform Guidelines", href: "/docs/uniform.pdf" }
+    ],
+    valuesTitle: "Our Values",
+    valuesText: "We are guided by Christian principles that emphasize discipline, respect, integrity, and service, in alignment with Seventh-day Adventist beliefs."
+  },
+  studentLife: {
+    activitiesTitle: "Extracurricular Activities",
+    activities: [
+      { name: "Football", description: "Join our competitive football teams and inter-school tournaments." },
+      { name: "Music & Choir", description: "Develop musical talents and participate in school concerts." },
+      { name: "Drama Club", description: "Act in school plays and cultural productions." },
+      { name: "Science & Robotics Club", description: "Explore STEM through experiments and robotics projects." },
+      { name: "Debate Club", description: "Enhance critical thinking and public speaking skills." }
+    ],
+    councilTitle: "Student Council",
+    council: [
+      { name: "Alice Wanjiku", position: "School President" },
+      { name: "Brian Otieno", position: "Vice President" },
+      { name: "Grace Chebet", position: "Secretary" },
+      { name: "David Kiplagat", position: "Treasurer" }
+    ],
+    eventsTitle: "Upcoming Events",
+    events: [
+      { date: "2025-01-20", title: "Annual Sports Day" },
+      { date: "2025-02-14", title: "Valentine's Concert" },
+      { date: "2025-03-10", title: "Science Fair" },
+      { date: "2025-04-05", title: "Parent-Teacher Meeting" }
+    ]
+  },
+  curriculum: {
+    pageTitle: "Our Curriculum",
+    intro: "Kajiado Adventist School and Rescue Center follows the Competency-Based Curriculum (CBC) as approved by the Kenya Institute of Curriculum Development (KICD).",
+    learningAreasTitle: "Learning Areas",
+    viewLearningAreasLabel: "View Learning Areas",
+    sections: {
+      "pre-primary": {
+        title: "Pre-Primary (PP1 & PP2)",
+        grades: "Play Group, PP1, PP2",
+        description: "The Pre-Primary curriculum focuses on holistic child development through play, creativity, and foundational competencies.",
+        areas: ["Language Activities", "Mathematical Activities", "Environmental Activities", "Psychomotor and Creative Activities", "Religious Education Activities"]
+      },
+      primary: {
+        title: "Primary School",
+        grades: "Grades 1 – 6",
+        description: "Primary education builds foundational literacy, numeracy, creativity, and citizenship skills.",
+        areas: ["English", "Kiswahili / Kenyan Sign Language", "Mathematics", "Environmental Studies", "Science and Technology", "Agriculture", "Creative Arts", "Physical Education", "Religious Education", "Social Studies"]
+      },
+      "junior-school": {
+        title: "Junior High School",
+        grades: "Grades 7 – 9",
+        description: "Junior School prepares learners for pathways by strengthening competencies, values, and career awareness.",
+        areas: ["English", "Kiswahili", "Mathematics", "Integrated Science", "Health Education", "Social Studies", "Pre-Technical Studies", "Business Studies", "Agriculture", "Computer Science", "Religious Education", "Creative Arts and Sports"]
+      },
+      "senior-school": {
+        title: "Senior School",
+        grades: "Grades 10 – 12",
+        description: "Senior School focuses on career pathways, specialization, and real-world problem-solving.",
+        areas: ["Sciences Pathway", "Arts and Sports Science Pathway", "Social Sciences Pathway", "STEM Pathway"]
+      }
+    }
+  }
+};

@@ -1,60 +1,49 @@
+"use client";
+
 import Link from "next/link";
+import { useSiteContent } from "@/components/SiteContentProvider";
 
 export default function Footer() {
+  const { content } = useSiteContent();
+
   return (
     <footer className="bg-lightBrown text-cream mt-12">
       <div className="max-w-7xl mx-auto px-4 py-2 grid grid-cols-1 md:grid-cols-4 gap-8">
-        
-        {/* School Info */}
         <div>
-          <h3 className="text-xl font-bold mb-3">
-            Kajiado Adventist School and Rescue Center
-          </h3>
+          <h3 className="text-xl font-bold mb-3">{content.footer.schoolName}</h3>
           <p className="text-sm leading-relaxed">
-            Education for Eternity.<br />
-            A Seventh-day Adventist institution offering holistic,
-            competency-based education.
+            {content.footer.tagline}
+            <br />
+            {content.footer.description}
           </p>
         </div>
 
-        {/* Quick Links */}
         <div>
-          <h4 className="font-semibold mb-3">Quick Links</h4>
+          <h4 className="font-semibold mb-3">{content.footer.quickLinksTitle}</h4>
           <ul className="space-y-2 text-sm">
-            <li><Link href="/about" className="hover:underline">About Us</Link></li>
-            <li><Link href="/admissions" className="hover:underline">Admissions</Link></li>
-            <li><Link href="/curriculum" className="hover:underline">Curriculum</Link></li>
-            <li><Link href="/student-life" className="hover:underline">Student Life</Link></li>
-            <li><Link href="/parents" className="hover:underline">Parents</Link></li>
+            {content.footer.quickLinks.map((link) => (
+              <li key={link.href}><Link href={link.href} className="hover:underline">{link.label}</Link></li>
+            ))}
           </ul>
         </div>
 
-        {/* School Sections */}
         <div>
-          <h4 className="font-semibold mb-3">School Sections</h4>
+          <h4 className="font-semibold mb-3">{content.footer.sectionsTitle}</h4>
           <ul className="space-y-2 text-sm">
-            <li>Play Group (PP1 & PP2)</li>
-            <li>Primary School (Grade 1–6)</li>
-            <li>Junior School (Grade 7–9)</li>
-            <li>Senior School (Grade 10–12)</li>
+            {content.footer.sections.map((section) => <li key={section}>{section}</li>)}
           </ul>
         </div>
 
-        {/* Contact Info */}
         <div>
-          <h4 className="font-semibold mb-3">Contact Us</h4>
+          <h4 className="font-semibold mb-3">{content.footer.contactTitle}</h4>
           <ul className="space-y-2 text-sm">
-            <li>Nairobi, Kenya</li>
-            <li>📞 +254 7XX XXX XXX</li>
-            <li>✉️ info@kajiadoadventistschool.ac.ke</li>
+            {content.footer.contactLines.map((line) => <li key={line}>{line}</li>)}
           </ul>
         </div>
-
       </div>
 
-      {/* Bottom Bar */}
       <div className="bg-darkBrown text-center py-3 text-sm">
-        © {new Date().getFullYear()} Kajiado Adventist School and Rescue Center. All rights reserved.
+        © {new Date().getFullYear()} {content.footer.copyrightSuffix}
       </div>
     </footer>
   );

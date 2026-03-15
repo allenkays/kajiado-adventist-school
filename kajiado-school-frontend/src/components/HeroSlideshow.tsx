@@ -3,50 +3,32 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useSiteContent } from "@/components/SiteContentProvider";
 
-
-const slides = [
-  {
-    src: "/images/kajiado_pics/kajiado_pic3.jpg",
-    title: "Kajiado Adventist School & Rescue Center",
-    subtitle: "Education for Eternity",
-  },
-  {
-    src: "/images/kajiado_pics/kajiado_pic4.jpg",
-    title: "Nurturing Mind & Character",
-    subtitle: "Empowering Minds, Embracing Faith",
-  },
-  {
-    src: "/images/kajiado_pics/kajiado_pic6.jpg",
-    title: "A Safe Learning Environment",
-    subtitle: "Where Every Child Matters",
-  },
-  {
-    src: "/images/kajiado_pics/kajiado_pic21.jpg",
-    title: "Preparing Students for Life",
-    subtitle: "Faith • Knowledge • Service",
-  },
-];
 
 const SLIDE_DURATION = 6000;
 
 export default function HeroSlideshow() {
   const [current, setCurrent] = useState(0);
   const [open, setOpen] = useState(false);
+  const { content } = useSiteContent();
+  const slides = content.home.slides;
   const nextSlide = () =>
     setCurrent((prev) => (prev + 1) % slides.length);
 
   const prevSlide = () =>
     setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
-  // Auto-play
   useEffect(() => {
+    if (slides.length === 0) return undefined;
     const timer = setInterval(() => {
-      nextSlide();
+      setCurrent((prev) => (prev + 1) % slides.length);
     }, SLIDE_DURATION);
 
     return () => clearInterval(timer);
-  }, [current]);
+  }, [current, slides.length]);
+
+  if (slides.length === 0) return null;
 
   return (
     <section className="relative w-full h-[520px] md:h-[720px] overflow-hidden">
@@ -95,39 +77,21 @@ export default function HeroSlideshow() {
               onClick={() => setOpen(!open)}
               className="bg-darkBrown border border-brown px-6 py-3 rounded-lg font-semibold hover:bg-brown transition flex items-center gap-2"
             >
-              Portals <span className="text-sm">▾</span>
+              {content.home.portalButtonText} <span className="text-sm">▾</span>
             </button>
 
             {open && (
               <div className="absolute right-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg overflow-hidden z-50">
-                <Link
-                  href="/portal/student"
-                  className="block px-4 py-3 hover:bg-gray-100"
-                  onClick={() => setOpen(false)}
-                >
-                  Student Portal
-                </Link>
-                <Link
-                  href="/portal/parent"
-                  className="block px-4 py-3 hover:bg-gray-100"
-                  onClick={() => setOpen(false)}
-                >
-                  Parent Portal
-                </Link>
-                <Link
-                  href="/portal/staff"
-                  className="block px-4 py-3 hover:bg-gray-100"
-                  onClick={() => setOpen(false)}
-                >
-                  Staff Portal
-                </Link>
-                <Link
-                  href="/portal/finance"
-                  className="block px-4 py-3 hover:bg-gray-100"
-                  onClick={() => setOpen(false)}
-                >
-                  Finance Portal
-                </Link>
+                {content.home.portalLinks.map((portalLink) => (
+                  <Link
+                    key={portalLink.href}
+                    href={portalLink.href}
+                    className="block px-4 py-3 hover:bg-gray-100"
+                    onClick={() => setOpen(false)}
+                  >
+                    {portalLink.label}
+                  </Link>
+                ))}
               </div>
             )}
           </div>
@@ -135,14 +99,14 @@ export default function HeroSlideshow() {
             href="/admissions"
             className="bg-darkBrown border border-brown px-6 py-3 rounded-lg font-semibold hover:bg-brown transition"
           >
-            Admissions
+            {content.home.admissionsButtonText}
           </Link>
 
           <Link
             href="/contact"
             className="bg-darkBrown border border-brown px-6 py-3 rounded-lg font-semibold hover:bg-brown transition"
           >
-            Contact Us
+            {content.home.contactButtonText}
           </Link>
         </div>
       {/* Arrows */}

@@ -34,3 +34,23 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Frontend Content CMS (No Django required)
+
+This project now includes a frontend-only content admin panel at:
+
+- `http://localhost:3000/content-admin`
+
+### How it works
+
+- Public pages/components read content from `public/site-content.json`.
+- You can override content in-browser from `/content-admin` (stored in browser localStorage).
+- Use **Download JSON** in `/content-admin` to export a fresh `site-content.json`.
+
+### Production content update workflow (frontend-only handover)
+
+1. Open `/content-admin`.
+2. Edit content and click **Save to Browser** to preview immediately.
+3. Click **Download JSON**.
+4. Upload the downloaded file to hosting as `/site-content.json`.
+5. Refresh the website to see updates globally.
